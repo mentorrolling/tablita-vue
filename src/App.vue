@@ -1,11 +1,9 @@
 <script setup>
 import {confetti} from './helpers/confetti'
-
-
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
 import { ref } from "vue";
+
 const MySwal = withReactContent(Swal)
 const textInput = ref("");
 const resultados = ref([]);
@@ -26,16 +24,14 @@ valor.value = Number(textInput.value);
    confetti()
   
   } else {
-    // alert("Ingrese un número");
+   
     MySwal.fire("Ingrese un número");
     textInput.value = "";
     
   }
 };
 
-const limpiarCampo=()=>{
-  textInput.value=''
-}
+
 </script>
 
 <template>
@@ -47,7 +43,7 @@ const limpiarCampo=()=>{
 
       </div>
       <form class="section-input" @submit.prevent="calcularTabla">
-        <input class="" v-model="textInput" @click="limpiarCampo" type="number" />
+        <input class="" v-model="textInput" @click="limpiarCampo=''" type="number" />
         <button type="submit">Probar!</button>
       </form>
     </section>
