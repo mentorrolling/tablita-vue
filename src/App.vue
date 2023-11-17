@@ -1,9 +1,16 @@
 <script setup>
-import { ref } from "vue";
+import {confetti} from './helpers/confetti'
 
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+import { ref } from "vue";
+const MySwal = withReactContent(Swal)
 const textInput = ref("");
 const resultados = ref([]);
 const valor=ref('')
+
 
 const calcularTabla = () => {
 valor.value = Number(textInput.value);
@@ -15,10 +22,12 @@ valor.value = Number(textInput.value);
         `${valor.value} x ${index} = ${valor.value * index}`,
       ];
     }
-    console.log(resultados.value);
-    textInput.value=''
+   textInput.value=''
+   confetti()
+  
   } else {
-    alert("Ingrese un número");
+    // alert("Ingrese un número");
+    MySwal.fire("Ingrese un número");
     textInput.value = "";
     
   }
