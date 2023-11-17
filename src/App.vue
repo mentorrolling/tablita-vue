@@ -70,7 +70,7 @@ valor.value = Number(textInput.value);
   background-color: #42D392;
   padding: 10px;
   border-radius: 10px;
-  color: #213547;
+  /* color: #213547; */
   
 }
 .section-input {
@@ -87,13 +87,22 @@ valor.value = Number(textInput.value);
 h3{
   font-size: 2rem;
   margin-top:10px;
-  margin-bottom:5px;
+  margin-bottom:0px;
+  color: black;
 }
 
 ul{
   list-style: none;
   padding: 0;
   font-size: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  font-size: 1.5em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  transition: border-color 0.25s;
 }
 .lista{
   font-size: 1.5rem;
