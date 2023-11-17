@@ -20,6 +20,7 @@ valor.value = Number(textInput.value);
   } else {
     alert("Ingrese un número");
     textInput.value = "";
+    
   }
 };
 
@@ -31,13 +32,17 @@ const limpiarCampo=()=>{
 <template>
   <main class="main">
     <section>
-      <h3>🖩 Tabla de multiplicar</h3>
+      <div class="titulo">
+        <img src="./assets/calc.png" alt="calc">
+        <h3> Tabla de multiplicar</h3>
+
+      </div>
       <form class="section-input" @submit.prevent="calcularTabla">
         <input class="" v-model="textInput" @click="limpiarCampo" type="number" />
         <button type="submit">Probar!</button>
       </form>
     </section>
-    <section v-if="resultados.length>0">
+    <section v-if="resultados.length>0 && valor >0">
       <h3>Tabla del <span>⭐{{ valor }}⭐</span></h3>
       <ul>
         <li v-for="resultado in resultados">
@@ -50,11 +55,18 @@ const limpiarCampo=()=>{
 
 <style scoped>
 
+
+.titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .main{
   background-color: #42D392;
   padding: 10px;
   border-radius: 10px;
   color: #213547;
+  
 }
 .section-input {
   display: flex;
